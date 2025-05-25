@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "TASAOrbiter";
+  src: url("./assets/typefaces/TASAOrbiterVF.woff2");
+}
+
+:root {
+  --text-primary: #b1d0e7;
+  --text-secondary: #6492b4;
+}
+
+* {
+  outline-offset: 4px;
+}
+
+body {
+  margin: 0;
+  font-family: "TASAOrbiter";
+  color: var(--text-primary);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-link {
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0px 1.5px 0 0 #1E3A54;
+  height: 20px;
+}
+
+.banner-link:hover {
+  box-shadow: 0px 2.5px 0 0 #1E3A54;
+}

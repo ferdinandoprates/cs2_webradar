@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ext\curl\curl.h" />
+    <ClInclude Include="ext\curl\curlver.h" />
+    <ClInclude Include="ext\curl\easy.h" />
+    <ClInclude Include="ext\curl\header.h" />
+    <ClInclude Include="ext\curl\include\curl.h" />
+    <ClInclude Include="ext\curl\include\curlver.h" />
+    <ClInclude Include="ext\curl\include\easy.h" />
+    <ClInclude Include="ext\curl\include\header.h" />
+    <ClInclude Include="ext\curl\include\mprintf.h" />
+    <ClInclude Include="ext\curl\include\multi.h" />
+    <ClInclude Include="ext\curl\include\options.h" />
+    <ClInclude Include="ext\curl\include\stdcheaders.h" />
+    <ClInclude Include="ext\curl\include\system.h" />
+    <ClInclude Include="ext\curl\include\typecheck-gcc.h" />
+    <ClInclude Include="ext\curl\include\urlapi.h" />
+    <ClInclude Include="ext\curl\include\websockets.h" />
+    <ClInclude Include="ext\curl\mprintf.h" />
+    <ClInclude Include="ext\curl\multi.h" />
+    <ClInclude Include="ext\curl\options.h" />
+    <ClInclude Include="ext\curl\stdcheaders.h" />
+    <ClInclude Include="ext\curl\system.h" />
+    <ClInclude Include="ext\curl\typecheck-gcc.h" />
+    <ClInclude Include="ext\curl\urlapi.h" />
+    <ClInclude Include="ext\curl\websockets.h" />
+    <ClInclude Include="ext\easywsclient\easywsclient.hpp" />
+    <ClInclude Include="ext\fnv1a\fnv1a.hpp" />
+    <ClInclude Include="ext\nlohmann\json.hpp" />
+    <ClInclude Include="src\common.hpp" />
+    <ClInclude Include="src\core\interfaces.hpp" />
+    <ClInclude Include="src\core\sdk.hpp" />
+    <ClInclude Include="src\sdk\entity_handle.hpp" />
+    <ClInclude Include="src\sdk\datatypes\utl_vector.hpp" />
+    <ClInclude Include="src\sdk\entity.hpp" />
+    <ClInclude Include="src\sdk\interfaces\schema_system.hpp" />
+    <ClInclude Include="src\core\schema.hpp" />
+    <ClInclude Include="src\sdk\datatypes\utl_ts_hash.hpp" />
+    <ClInclude Include="src\driver\driver.hpp" />
+    <ClInclude Include="src\sdk\interfaces\game_entity_system.hpp" />
+    <ClInclude Include="src\sdk\interfaces\global_vars.hpp" />
+    <ClInclude Include="src\features\features.hpp" />
+    <ClInclude Include="src\sdk\datatypes\vector.hpp" />
+    <ClInclude Include="src\utils\address.hpp" />
+    <ClInclude Include="src\utils\config.hpp" />
+    <ClInclude Include="src\utils\memory.hpp" />
+    <ClInclude Include="src\utils\exception.hpp" />
+    <ClInclude Include="src\utils\utils.hpp" />
+    <ClInclude Include="usermode.hpp" />
+    <ClInclude Include="src\pch.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ext\easywsclient\easywsclient.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\core\interfaces.cpp" />
+    <ClCompile Include="src\core\sdk.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\features\bomb\bomb.cpp" />
+    <ClCompile Include="src\features\features.cpp" />
+    <ClCompile Include="src\features\players\players.cpp" />
+    <ClCompile Include="src\sdk\entity.cpp" />
+    <ClCompile Include="src\utils\address.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\core\schema.cpp" />
+    <ClCompile Include="src\utils\config.cpp" />
+    <ClCompile Include="src\utils\exception.cpp" />
+    <ClCompile Include="src\utils\memory.cpp" />
+    <ClCompile Include="src\utils\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6A55EA2E-776D-410E-B7F1-DEA56E9BDFCD}</ProjectGuid>
+    <RootNamespace>usermode</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>usermode</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\$(Configuration)\intermediates\</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.hpp</PrecompiledHeaderFile>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <BuildStlModules>false</BuildStlModules>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>crypt32.lib;wldap32.lib;normaliz.lib;libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <AdditionalLibraryDirectories>$(SolutionDir)ext\curl\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
